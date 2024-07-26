@@ -3,8 +3,8 @@ id: square-root
 title: Square Root
 sidebar_label: Square-Root
 tags:
-  - Math
-  - Binary Search
+- Math
+- Binary Search
 description: "This document provides solutions to the problem of finding the Square Root of an integer."
 ---
 
@@ -128,27 +128,25 @@ public:
 
 ```javascript
 class Solution {
-  floorSqrt(x) {
-    if (x === 0 || x === 1) {
-      return x;
+    floorSqrt(x) {
+        if (x === 0 || x === 1) {
+            return x;
+        }
+        let start = 1, end = x, ans = 0;
+        while (start <= end) {
+            let mid = Math.floor((start + end) / 2);
+            if (mid * mid === x) {
+                return mid;
+            }
+            if (mid * mid < x) {
+                start = mid + 1;
+                ans = mid;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
     }
-    let start = 1,
-      end = x,
-      ans = 0;
-    while (start <= end) {
-      let mid = Math.floor((start + end) / 2);
-      if (mid * mid === x) {
-        return mid;
-      }
-      if (mid * mid < x) {
-        start = mid + 1;
-        ans = mid;
-      } else {
-        end = mid - 1;
-      }
-    }
-    return ans;
-  }
 }
 ```
 
@@ -157,27 +155,25 @@ class Solution {
 
 ```typescript
 class Solution {
-  floorSqrt(x: number): number {
-    if (x === 0 || x === 1) {
-      return x;
+    floorSqrt(x: number): number {
+        if (x === 0 || x === 1) {
+            return x;
+        }
+        let start = 1, end = x, ans = 0;
+        while (start <= end) {
+            let mid = Math.floor((start + end) / 2);
+            if (mid * mid === x) {
+                return mid;
+            }
+            if (mid * mid < x) {
+                start = mid + 1;
+                ans = mid;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
     }
-    let start = 1,
-      end = x,
-      ans = 0;
-    while (start <= end) {
-      let mid = Math.floor((start + end) / 2);
-      if (mid * mid === x) {
-        return mid;
-      }
-      if (mid * mid < x) {
-        start = mid + 1;
-        ans = mid;
-      } else {
-        end = mid - 1;
-      }
-    }
-    return ans;
-  }
 }
 ```
 
